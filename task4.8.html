@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task-8</title>
+    <style>
+        label{
+            width:130px;
+            display:inline-block;
+            font-weight:bold;
+            text-align:end;
+        }
+        h2{
+            color:blue;
+        }
+        div.form{
+            border:2px solid;
+            width:800px;
+            height:680px;
+            margin-top:50px;
+            padding:10px 20px;
+            background:linear-gradient(rgb(255, 253, 196),pink)
+        }
+        input{
+            padding:4px;
+            align-items:start;
+        }
+        #i1{
+            width:7cm;
+        }
+        .c1{
+            line-height:33px;
+        }
+        button{
+            background-color:rgb(243, 56, 56);
+            width:80px;
+            height:25px;
+            border-radius:10px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .c2{
+            width: 400px;
+        }
+        .clr{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <div class="form">
+    <h2>Registration form</h2>
+    <form action="">
+        <table>
+            <tr>
+                <td>
+                    <label class="c1">First Name</label>
+                </td>
+                <td>
+                    <input onkeyup="fnamestrength()" class="c2" id="r1" type="text"/>
+                </td>
+                <td><span class="clr" id="l1">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">Last Name</label>
+                </td>
+                <td>
+                    <input onkeyup="lnamestrength()" class="c2" id="r2" type="text"/>
+                </td>
+                <td><span class="clr" id="l2">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">Email</label>
+                </td>
+                <td>
+                    <input onkeyup="mailstrength()" class="c2" id="r3" type="email"/>
+                </td>
+                <td><span class="clr" id="l3">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">Password</label>
+                </td>
+                <td>
+                    <input onkeyup="passwordstrength()" id="r4" class="c2" type="password"/>
+                </td>
+                <td><span class="clr" id="l4">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">Re-enter Password</label>
+                </td>
+                <td>
+                    <input onkeyup="repasswordstrength()" class="c2" id="r5" type="password"/>
+                </td>
+                <td><span class="clr" id="l5">POOR OR MISMATCHED</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="gender" class="c1" id="i3">Gender</label>
+                </td>
+                <td>
+                    <input  name="gender" type="radio"/>Male<br>
+                    <input name="gender" type="radio"/>Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">Age</label>
+                </td>
+                <td>
+                    <input onkeyup="agstrength()" class="c2" id="r6" type="text"/>
+                </td>
+                <td><span class="clr" id="l6">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">Phone Number</label>
+                </td>
+                <td>
+                    <input onkeyup="phstrength()" class="c2" id="r7" type="text"/>
+                </td>
+                <td><span class="clr" id="l7">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1" id="i4">Address</label>
+                </td>
+                <td>
+                    <textarea onkeyup="addrstrength()" class="c2" id="r8"></textarea>
+                </td>
+                <td><span class="clr" id="l8">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">State</label>
+                </td>
+                <td>
+                    <input onkeyup="ststrength()" class="c2" id="r9" type="text"/>
+                </td>
+                <td><span class="clr" id="l9">POOR</span></td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1" id="i3">Country</label>
+                </td>
+                <td>
+                    <select>
+                        <option>Choose yours Country</option>
+                        <option>India</option>
+                        <option>China</option>
+                        <option>Korea</option>
+                        <option>Bangladesh</option>
+                        <option>Sri Lanka</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label class="c1">Languages known</label>
+                </td>
+                <td>
+                    <input type="checkbox"/>English
+                    <input type="checkbox"/>Kannada
+                    <input type="checkbox"/>Hindi
+                    <input type="checkbox"/>Telugu
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <input class="c1" type="checkbox"/>Hereby I declare all the given details are true
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p align="right" class="c1" id="i2">Login in to <a href="">Ethnus </a>website</p>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <center>
+                        <button class="c1">Register</button>
+                    </center>
+                </td>
+            </tr>
+        </table> 
+    </form>
+    </div>
+    </center>
+    <script>
+        function fnamestrength() {
+            var fname=document.getElementById("r1").value;
+            if(fname.length<5) {
+                document.getElementById("l1").innerHTML="POOR";
+                document.getElementById("l1").style.color = "red";
+            }
+            else{
+                document.getElementById("l1").innerHTML="GOOD";
+                document.getElementById("l1").style.color = "green";
+
+            }
+        }
+        function lnamestrength() {
+            var lname=document.getElementById("r2").value;
+            if(lname.length<5) {
+                document.getElementById("l2").innerHTML="POOR";
+                document.getElementById("l2").style.color = "red";
+            }
+            else{
+                document.getElementById("l2").innerHTML="GOOD";
+                document.getElementById("l2").style.color = "green";
+            }
+        }
+        function mailstrength() {
+            var mail=document.getElementById("r3").value;
+            if(mail.length>5 && mail.match(/[a-z][a-z0-9]@[a-z].[a-z]/)) {
+                document.getElementById("l3").innerHTML="GOOD";
+                document.getElementById("l3").style.color = "green";
+            }
+            else{
+                document.getElementById("l3").innerHTML="POOR";
+                document.getElementById("l3").style.color = "red";
+            }
+        }
+        function passwordstrength() {
+            var pwd=document.getElementById("r4").value;
+            if(pwd.length<5) {
+                document.getElementById("l4").innerHTML="POOR";
+                document.getElementById("l4").style.color = "red";
+            }
+            else{
+                document.getElementById("l4").innerHTML="GOOD";
+                document.getElementById("l4").style.color = "green";
+            }
+        }
+        function repasswordstrength() {
+            var pwd1=document.getElementById("r5").value;
+            var pwd=document.getElementById("r4").value;
+            if(pwd1.length<5) {
+                document.getElementById("l5").innerHTML="POOR OR MISMATCHED";
+                document.getElementById("l5").style.color = "red";
+            }
+            else{
+                if(pwd1==pwd){
+                    document.getElementById("l5").innerHTML="GOOD AND MATCHED";
+                    document.getElementById("l5").style.color = "green";
+                }
+                else{
+                    document.getElementById("l5").innerHTML="GOOD AND MISMATCHED";
+                    document.getElementById("l5").style.color = "red";
+                }
+            }
+        }
+        function agstrength() {
+            var ag=document.getElementById("r6").value;
+            if(ag.length==0) {
+                document.getElementById("l6").innerHTML="POOR";
+                document.getElementById("l6").style.color = "red";
+            }
+            else if(ag.length<3 && ag.match(/[0-9]/)){
+                document.getElementById("l6").innerHTML="GOOD";
+                document.getElementById("l6").style.color = "green";
+            }
+            else{
+                document.getElementById("l6").innerHTML="POOR";
+                document.getElementById("l6").style.color = "red";
+            }
+        }
+        function phstrength() {
+            var ph=document.getElementById("r7").value;
+            if(ph.length==10 && ph.match(/[0-9]/)) {
+                document.getElementById("l7").innerHTML="GOOD";
+                document.getElementById("l7").style.color = "green";
+            }
+            else{
+                document.getElementById("l7").innerHTML="POOR";
+                document.getElementById("l7").style.color = "red";
+            }
+        }
+        function addrstrength() {
+            var addr=document.getElementById("r8").value;
+            if(addr.length<5) {
+                document.getElementById("l8").innerHTML="POOR";
+                document.getElementById("l8").style.color = "red";
+            }
+            else{
+                document.getElementById("l8").innerHTML="GOOD";
+                document.getElementById("l8").style.color = "green";
+            }
+        }
+        function ststrength() {
+            var st=document.getElementById("r9").value;
+            if(st.length<2) {
+                document.getElementById("l9").innerHTML="POOR";
+                document.getElementById("l9").style.color = "red";
+            }
+            else{
+                document.getElementById("l9").innerHTML="GOOD";
+                document.getElementById("l9").style.color = "green";
+            }
+        }
+    </script>
+</body>
+</html>

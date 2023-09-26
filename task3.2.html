@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task-2</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body,header,html{
+            scroll-behavior:smooth;
+            height:100%;
+        }
+        body{
+            min-height:100%;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+        #icon1{
+            font-size:5rem;
+        }
+        #icon2{
+            font-size:3rem;
+        }
+        header{
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            color:white;
+        }
+        footer .row{
+            width:100%;
+            height:200px;
+            padding-top:3px;
+        }
+        nav{
+            width:100%;
+        }
+        .fixed-top{
+            padding:20px 0 20px 8px;
+        }
+        .fixed-top .navbar-nav li a{
+            font-size:19px;
+            color:white !important;
+            transition:.5s ease-in-out;
+        }
+        .fixed-top .navbar-nav li a:hover{
+            color:black !important;
+        }
+        #main-bar{
+            position:absolute;
+            width:100%;
+            top:13%;
+            position:fixed;
+            z-index:1;
+            border:0px;
+            border-left:10px ;
+        }
+        #main-bar .nav-item{
+            margin-left:10px;
+            font-size:17px;
+        }
+        
+        .section-padding{
+            padding:100px 0;
+        }
+        .carousel-caption{
+            bottom:220px;
+            z-index:2;
+        }
+        .carousel-caption h1{
+            font-size:45px;
+            letter-spacing:2px;
+            margin-top:10px;
+            margin-bottom:25px;
+        }
+        .carousel-caption p{
+            width:60%;
+            margin:auto;
+            font-size:22px;
+            line-height:1.9;
+            background-size: cover;
+        }
+        .carousel-inner::before{
+            content: '';
+            position:absolute;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            background:rgba(0,0,0,0.7);
+            z-index:1;
+        }
+        #s1{
+            font-weight:700;
+        }
+        .t1{
+            display:flex;
+        }
+        #k1{
+            display:flex;
+            align-items:center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-sm navbar bg-warning">
+            <h1 class="text-dark ms-3 " id="s1">Builderz</h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="navbar-toggle-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="navbar-nav ms-auto mb-1 mb-lg-0">
+                    <li class="nav-item ps-5" id="k1">
+                        <i id="icon2" class="fa-solid fa-calendar-days"></i>
+                        <a class="nav-link active text-light" href="#"> Opening Hour<br>Mon-Fri 8:00 - 9:00</a>
+                    </li>
+                    <li class="nav-item ps-5" id="k1">
+                        <i id="icon2" class="fa-solid fa-address-card"></i>
+                        <a class="nav-link active text-light" href="#"> Call Us<br>+012 345 6789</a>   
+                    </li>
+                    <li class="nav-item ps-5" id="k1">
+                        <i id="icon2" class="fa-solid fa-envelope-open-text"></i>
+                        <a class="nav-link active text-light" href="#"> Email Us<br>info@example.com</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <nav class="navbar navbar-expand-lg bg-dark fixed-top" id="main-bar">
+                    <div class="container-fluid">
+                      <a class="navbar-brand text-warning" href="#">HOME</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                          <li class="nav-item">
+                            <a class="nav-link active text-light" href="#">ABOUT</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="#">SERVICE</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="#">TEAM</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="#">PROJECT</a>
+                          </li>
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-light" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                PAGES
+                            </a>
+                            <ul class="dropdown-menu bg-dark">
+                              <li><a class="dropdown-item text-dark" href="#">Blog Page</a></li>
+                              <li><a class="dropdown-item text-dark" href="#">Single Page</a></li>
+                            </ul>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link text-light" href="#">CONTACT</a>
+                          </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <button class="btn btn-outline-light me-2" type="submit"><b>GET A QUOTE</b></button>
+                        </form>
+                      </div>
+                    </div>
+                </nav>
+            </div>
+        </nav>
+    </header>
+    <div id="carouselExampleDark" class="carousel carousel-dark-fade slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="10000">
+            <img src="./icon6.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-light">
+                <p>We Are Professional</p>
+                <h1>For Your Dream Project</h1>
+                <button type="button" class="btn btn-outline-light"><b>GET A QUOTE</b></button>
+            </div>
+          </div>
+          <div class="carousel-item" data-bs-interval="2000">
+            <img src="./icon5.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-light">
+                <p>We Are Professional</p>
+                <h1>For Your Dream Project</h1>
+                <button type="button" class="btn btn-outline-light"><b>GET A QUOTE</b></button>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="./icon7.jpeg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block text-light">
+                <p>We Are Professional</p>
+                <h1>For Your Dream Project</h1>
+                <button type="button" class="btn btn-outline-light"><b>GET A QUOTE</b></button>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <footer class="sticky-footer">
+        <div class="container-fluid">
+            <div class="t1" id="c1">
+                <div class="row">
+                    <div class="col-md-4 text-warning bg-dark">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <i id="icon1" class="fa-solid fa-person-digging"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><b>Expert Worker</b></h5>
+                                <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-dark bg-warning">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <i id="icon1" class="fa-solid fa-building-lock"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><b>Quality Work</b></h5>
+                                <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 text-warning bg-dark">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <i id="icon1" class="fa-solid fa-headset"></i>
+                            </div>
+                            <div class="col-md-6">
+                                <h5><b>24/7 Support</b></h5>
+                                <p>Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit non</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+      </footer>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-1</title>
+</head>
+<body>
+    <script>
+    var x;
+    var reverse=0;
+    function reverse_num(x) {
+        document.write("x = "+x+"<br>");
+        while(x!=0) {
+            reverse=(reverse*10)+(x%10);
+            x=parseInt(x/10);
+        }
+        document.write("Output : "+reverse);
+    }
+    reverse_num(32243);
+    </script>
+</body>
+</html>

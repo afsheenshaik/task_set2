@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-3</title>
+    <style>
+        label{
+            width:100px;
+            display:inline-block;
+        }
+        .i2{
+            place-items:center;
+        }
+        .i1{
+            line-height:25px;
+        }
+    </style>
+</head>
+<body class="i2">
+    
+    <form>
+        <div class="i1">
+            <span>
+                <label>1st Number : </label>
+            </span>
+            <span>
+                <input id="n1" type="text"/>
+            </span>
+        </div>
+        <div class="i1">
+            <span>
+                <label>2nd Number : </label>
+            </span>
+            <span>
+                <input id="n2" type="text"/>
+            </span>
+        </div>
+        <div>
+            <span>
+                <input type="button" onClick="mul()" value="Multiply"/>
+            </span>
+            <span>
+                <input type="button" onClick="div()" value="Divide"/>
+            </span>
+        </div>
+    </form>
+    <p>
+        The Result Is : <br>
+        <span id="r1"></span>
+    </p>
+    <script>
+        function mul() {
+            n1=document.getElementById("n1").value;
+            n2=document.getElementById("n2").value;
+            document.getElementById("r1").innerHTML=n1*n2;
+        }
+        function div() {
+            n1=document.getElementById("n1").value;
+            n2=document.getElementById("n2").value;
+            document.getElementById("r1").innerHTML=n1/n2;
+        }
+    </script>
+</body>
+</html>

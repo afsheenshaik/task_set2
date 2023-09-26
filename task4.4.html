@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-4</title>
+</head>
+<body>
+    <input type="button" onClick="displayDate()" value="Show Date"/>
+    <p id="r1"></p>
+    <input type="button" onClick="displayTime()" value="Show Time"/>
+    <p id="r2"></p>
+    <script>
+        function displayDate() {
+            var today=new Date();
+            const months=["January","February","March","April","May","June","July","August","September","Octomber","November","December"];
+            document.getElementById("r1").innerHTML=today.getDate()+"/"+months[today.getMonth()]+"/"+today.getFullYear();
+        }
+        function displayTime() {
+            var time=new Date();
+            document.getElementById("r2").innerHTML=time;
+        }
+    </script>
+</body>
+</html>

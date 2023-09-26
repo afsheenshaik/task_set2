@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Task-5</title>
+    <style>
+    #contact label{
+    	display: inline-block;
+    	width: 100px;
+    	text-align: right;
+    }
+    #contact_submit{
+    	padding-left: 100px;
+    }
+    #contact div{
+	    margin-top: 1em;
+    }
+    textarea{
+    	vertical-align: top;
+    	height: 5em;
+    }
+    .error{
+    	margin-left: 10px;
+        color: red;
+    }		
+    </style>
+</head>
+<body>
+    <form onsubmit="return checkreq()" id="contact" action="">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="contact_name" name="name"></input>
+            <span class="error" id="msg1"></span>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="contact_email" name="email"></input>
+            <span class="error" id="msg2"></span>				
+        </div>						
+        <div>
+            <label for="website">Website:</label>
+            <input type="url" id="contact_website" name="website"></input>
+            <span class="error" id="msg3"></span>								
+        </div>					
+        <div>
+            <label for="message">Message:</label>
+            <textarea id="contact_message" name="message"></textarea>
+            <span class="error" id="msg4"></span>												
+        </div>					
+        <div id="contact_submit">				
+            <button type="submit">Submit</button>
+        </div>
+    </form>    
+    <script>
+        function checkreq() {
+            var returnValue;
+            var nm=document.getElementById("contact_name").value;
+            var mail=document.getElementById("contact_email").value;
+            var site=document.getElementById("contact_website").value;
+            var msg=document.getElementById("contact_message").value;
+            returnValue=true;
+            if(nm.length==0) {
+                document.getElementById("msg1").innerHTML="This field is required";
+                document.getElementById("contact_name").style.borderColor = "red";
+                returnValue=false;
+            }
+            if(mail.length==0) {
+                document.getElementById("msg2").innerHTML="A valid email address is required";
+                document.getElementById("contact_email").style.borderColor = "red";
+                returnValue=false;
+            }
+            if(site.length==0) {
+                document.getElementById("msg3").innerHTML="A valid url is required";
+                document.getElementById("contact_website").style.borderColor = "red";
+                returnValue=false;
+            }
+            if(msg.length==0) {
+                document.getElementById("msg4").innerHTML="This field is required";
+                document.getElementById("contact_message").style.borderColor = "red";
+                returnValue=false;
+            }
+            return returnValue;
+        }
+    </script>
+</body>
+</html>
